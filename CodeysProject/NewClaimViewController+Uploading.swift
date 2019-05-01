@@ -45,7 +45,7 @@ extension NewClaimViewController {
 			alert.dismiss(animated: true)
 		}
 		alert = UIAlertController(title: "We're sorry, an error has occured. This claim has not been saved.", message: errorDescription, preferredStyle: .alert)
-		alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in self.unwindToClaims()}))
+		alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in self.unwindToClaims(forCaseID: nil)}))
 		present(self.alert, animated: true)
 		
 		SalesforceLogger.e(type(of: self), message: "Failed to successfully complete the REST request. \(errorDescription)")
@@ -89,7 +89,6 @@ extension NewClaimViewController {
 		record["Incident_Location_Txt__c"] = self.geoCodedAddressText
 		record["Incident_Location__latitude__s"] = self.mapView.centerCoordinate.latitude
 		record["Incident_Location__longitude__s"] = self.mapView.centerCoordinate.longitude
-		record["PotentialLiability__c"] = true
 		
 		RestClient.shared.createCase(withFields: record, onFailure: handleError) { newCaseID in
 			SalesforceLogger.d(type(of: self), message: "Completed creating case with ID: \(newCaseID). Uploading Contacts.")
@@ -122,7 +121,7 @@ extension NewClaimViewController {
 		let associationRequest = RestClient.shared.compositeRequestForCreatingAssociations(fromContactIDs: contactIDs, toCaseID: caseID)
 		RestClient.shared.sendCompositeRequest(associationRequest, onFailure: handleError) { _ in
 			SalesforceLogger.d(type(of: self), message: "Completed creating \(contactIDs.count) case contact record(s). Optionally uploading map image as attachment.")
-			self.uploadMapImage(forCaseID: caseID)
+			self.unwindToClaims(forCaseID: caseID)
 		}
 	}
 
@@ -158,14 +157,13 @@ extension NewClaimViewController {
 			pinImage?.draw(at: point)
 
 			let mapImage = UIGraphicsGetImageFromCurrentImageContext()!
-			let attachmentRequest = RestClient.shared.requestForCreatingImageAttachment(from: mapImage, relatingToCaseID: caseID, fileName: "MapSnapshot.png")
-
+			
+			//Insert your attachmentRequest here.
+			
+			//End area for Attachment Request.
 			UIGraphicsEndImageContext()
 		
-			RestClient.shared.send(request: attachmentRequest, onFailure: self.handleError) { _, _ in
-				SalesforceLogger.d(type(of: self), message: "Completed uploading map image. Now uploading photos.")
-				self.uploadPhotos(forCaseID: caseID)
-			}
+			//Use your attachment request here.
 		}
 	}
 
@@ -180,7 +178,6 @@ extension NewClaimViewController {
 				SalesforceLogger.d(type(of: self), message: "Completed upload of photo \(index + 1) of \(self.selectedImages.count).")
 			}
 		}
-		self.uploadAudio(forCaseID: caseID)
 	}
 
 	/// Uploads the recorded audio as an attachment.
@@ -192,19 +189,25 @@ extension NewClaimViewController {
 			let attachmentRequest = RestClient.shared.requestForCreatingAudioAttachment(from: audioData, relatingToCaseID: caseID)
 			RestClient.shared.send(request: attachmentRequest, onFailure: handleError) { _, _ in
 				SalesforceLogger.d(type(of: self), message: "Completed uploading audio file. Transaction complete!")
-				self.unwindToClaims()
 			}
 		} else {
 			// Complete upload if there is no audio file.
 			SalesforceLogger.d(type(of: self), message: "No audio file to upload. Transaction complete!")
-			self.unwindToClaims()
+			self.unwindToClaims(forCaseID: caseID)
 		}
 	}
 
 	/// Dismisses the current modal and returns the user to open claims.
-	private func unwindToClaims() {
+	private func unwindToClaims(forCaseID caseID: String?) {
 		wasSubmitted = true
 		// Unwind back to claims. UI calls must be performed on the main thread.
+		if let cid = caseID {
+			let commentRequest = RestClient.shared.requestForCreate(withObjectType: "CaseComment", fields: ["parentId": cid, "commentBody": "navigating back to claims list view"])
+			RestClient.shared.send(request:commentRequest, onFailure: handleError) {_,_ in
+				SalesforceLogger.d(type(of: self), message: "Completed writing case comment")
+			}
+		}
+		
 		DispatchQueue.main.async {
 			self.performSegue(withIdentifier: "unwindFromNewClaim", sender: self)
 		}

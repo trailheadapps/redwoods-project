@@ -66,15 +66,14 @@ extension RestClient {
 	///     completes.
 	///   - accountID: The ID of the master account.
 	func fetchMasterAccountForUser(onFailure failureHandler: @escaping RestFailBlock, completionHandler: @escaping (_ accountID: String) -> Void) {
-		let userID = UserAccountManager.shared.currentUserAccount!.accountIdentity.userId
-		let accountRequest = self.request(forQuery: "SELECT Contact.AccountID FROM User WHERE Id = '\(userID)' LIMIT 1")
+		let accountRequest = self.request(forQuery: "SELECT Id FROM Account WHERE Master_Account__c = true LIMIT 1")
 		self.send(request: accountRequest, onFailure: failureHandler) { response, urlResponse in
 			guard let responseDictionary = response as? [String: Any],
 			      let records = responseDictionary["records"] as? [[String: Any]],
-						let contact = records.first?["Contact"] as? [String: Any],
-						let accountID = contact["AccountId"] as? String
+						//let contact = records.first?["Contact"] as? [String: Any],
+						let accountID = records.first?["Id"] as? String
 			else {
-				failureHandler(CaseRequestError.responseDataCorrupted(keyPath: "Contact.AccountId"), urlResponse)
+				failureHandler(CaseRequestError.responseDataCorrupted(keyPath: "records.first?[Id]"), urlResponse)
 				return
 			}
 			completionHandler(accountID)

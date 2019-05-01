@@ -24,11 +24,11 @@
 		B5B254E721B1B02200CB628C /* NewClaimViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B254CB21B1B02000CB628C /* NewClaimViewController.swift */; };
 		B5B254EA21B1B02200CB628C /* RestClient+NewClaim.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B254CE21B1B02100CB628C /* RestClient+NewClaim.swift */; };
 		B5B254EC21B1B02200CB628C /* NewClaimViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B254D021B1B02100CB628C /* NewClaimViewController+Map.swift */; };
-		B5C3645D21CBF30E003941D0 /* SalesforceAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B587811D21CBEFE100E8644B /* SalesforceAnalytics.framework */; };
+		B5B2CC00227359DE00A515D1 /* SalesforceAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B587811D21CBEFE100E8644B /* SalesforceAnalytics.framework */; };
+		B5B2CC01227359E600A515D1 /* SalesforceSDKCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B587810D21CBEFD800E8644B /* SalesforceSDKCommon.framework */; };
+		B5B2CC02227359F000A515D1 /* SalesforceSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DAD87021CAC42C00A4B9BD /* SalesforceSDKCore.framework */; };
 		B5C3645E21CBF30E003941D0 /* SalesforceAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B587811D21CBEFE100E8644B /* SalesforceAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5C3646221CBF324003941D0 /* SalesforceSDKCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DAD87021CAC42C00A4B9BD /* SalesforceSDKCore.framework */; };
 		B5C3646321CBF324003941D0 /* SalesforceSDKCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B5DAD87021CAC42C00A4B9BD /* SalesforceSDKCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		B5C3646621CBF331003941D0 /* SalesforceSDKCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B587810D21CBEFD800E8644B /* SalesforceSDKCommon.framework */; };
 		B5C3646721CBF331003941D0 /* SalesforceSDKCommon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B587810D21CBEFD800E8644B /* SalesforceSDKCommon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B5C3CF5021B4C9E7004EBA83 /* UIImage+resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C3CF4F21B4C9E7004EBA83 /* UIImage+resize.swift */; };
 		B5E6FCC021B464BF005669FE /* NewClaimViewController+Uploading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E6FCBF21B464BE005669FE /* NewClaimViewController+Uploading.swift */; };
@@ -93,40 +93,26 @@
 			remoteGlobalIDString = CE2B8C2A1CE9218900C6FC6A;
 			remoteInfo = SalesforceAnalyticsTestApp;
 		};
-		B587814121CBF13200E8644B /* PBXContainerItemProxy */ = {
+		B5B2CBF7227359A100A515D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B587811421CBEFE100E8644B /* SalesforceAnalytics.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = CE2B8BCE1CE900F500C6FC6A;
 			remoteInfo = SalesforceAnalytics;
 		};
-		B587814521CBF13200E8644B /* PBXContainerItemProxy */ = {
+		B5B2CBF9227359A100A515D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B587810521CBEFD800E8644B /* SalesforceSDKCommon.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = B7136CFD216684A700F6A221;
 			remoteInfo = SalesforceSDKCommon;
 		};
-		B5C3645F21CBF30E003941D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B587811421CBEFE100E8644B /* SalesforceAnalytics.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CE2B8BCE1CE900F500C6FC6A;
-			remoteInfo = SalesforceAnalytics;
-		};
-		B5C3646421CBF324003941D0 /* PBXContainerItemProxy */ = {
+		B5B2CBFB227359A100A515D1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B5DAD86421CAC42C00A4B9BD /* SalesforceSDKCore.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = CE4CE26A1C0E449C009F6029;
 			remoteInfo = SalesforceSDKCore;
-		};
-		B5C3646821CBF331003941D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B587810521CBEFD800E8644B /* SalesforceSDKCommon.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = B7136CFD216684A700F6A221;
-			remoteInfo = SalesforceSDKCommon;
 		};
 		B5DAD86F21CAC42C00A4B9BD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -156,13 +142,6 @@
 			remoteGlobalIDString = CEA8825F1C18F722008D871B;
 			remoteInfo = SalesforceSDKCoreStatic;
 		};
-		B5DAD87721CAC47600A4B9BD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5DAD86421CAC42C00A4B9BD /* SalesforceSDKCore.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CE4CE26A1C0E449C009F6029;
-			remoteInfo = SalesforceSDKCore;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -183,7 +162,7 @@
 
 /* Begin PBXFileReference section */
 		4F393A281C3C8BCD00B3EA13 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		4FD6C4741B754AF1002F9F90 /* CodeysCarInsurance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CodeysCarInsurance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4FD6C4741B754AF1002F9F90 /* Codey-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Codey-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD6C4781B754AF1002F9F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FF12F8A1DCA91F5004D9EF9 /* CodeysCarInsurance.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CodeysCarInsurance.entitlements; sourceTree = "<group>"; };
@@ -204,6 +183,7 @@
 		B5B254CB21B1B02000CB628C /* NewClaimViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewClaimViewController.swift; sourceTree = "<group>"; };
 		B5B254CE21B1B02100CB628C /* RestClient+NewClaim.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RestClient+NewClaim.swift"; sourceTree = "<group>"; };
 		B5B254D021B1B02100CB628C /* NewClaimViewController+Map.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewClaimViewController+Map.swift"; sourceTree = "<group>"; };
+		B5B2CBE8227354C000A515D1 /* Codey-Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Codey-Project.entitlements"; sourceTree = "<group>"; };
 		B5C3CF4F21B4C9E7004EBA83 /* UIImage+resize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+resize.swift"; sourceTree = "<group>"; };
 		B5DAD86421CAC42C00A4B9BD /* SalesforceSDKCore.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceSDKCore.xcodeproj; path = "mobile_sdk/SalesforceMobileSDK-iOS/libs/SalesforceSDKCore/SalesforceSDKCore.xcodeproj"; sourceTree = "<group>"; };
 		B5E6FCBF21B464BE005669FE /* NewClaimViewController+Uploading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewClaimViewController+Uploading.swift"; sourceTree = "<group>"; };
@@ -216,9 +196,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5C3645D21CBF30E003941D0 /* SalesforceAnalytics.framework in Frameworks */,
-				B5C3646621CBF331003941D0 /* SalesforceSDKCommon.framework in Frameworks */,
-				B5C3646221CBF324003941D0 /* SalesforceSDKCore.framework in Frameworks */,
+				B5B2CC00227359DE00A515D1 /* SalesforceAnalytics.framework in Frameworks */,
+				B5B2CC01227359E600A515D1 /* SalesforceSDKCommon.framework in Frameworks */,
+				B5B2CC02227359F000A515D1 /* SalesforceSDKCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +208,8 @@
 		4FD6C46B1B754AF1002F9F90 = {
 			isa = PBXGroup;
 			children = (
-				4FD6C4761B754AF1002F9F90 /* CodeysCarInsurance */,
+				B5B2CBE8227354C000A515D1 /* Codey-Project.entitlements */,
+				4FD6C4761B754AF1002F9F90 /* CodeysProject */,
 				4FD6C4751B754AF1002F9F90 /* Products */,
 				6B868AEB1ACA7FCA4636C7F7 /* Frameworks */,
 			);
@@ -238,12 +219,12 @@
 		4FD6C4751B754AF1002F9F90 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4FD6C4741B754AF1002F9F90 /* CodeysCarInsurance.app */,
+				4FD6C4741B754AF1002F9F90 /* Codey-Project.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		4FD6C4761B754AF1002F9F90 /* CodeysCarInsurance */ = {
+		4FD6C4761B754AF1002F9F90 /* CodeysProject */ = {
 			isa = PBXGroup;
 			children = (
 				B5B254C621B1B01E00CB628C /* Main.storyboard */,
@@ -253,7 +234,7 @@
 				ABBB0CBD21CD913F00CFD686 /* New Claim */,
 				4FD6C4771B754AF1002F9F90 /* Supporting Files */,
 			);
-			path = CodeysCarInsurance;
+			path = CodeysProject;
 			sourceTree = "<group>";
 		};
 		4FD6C4771B754AF1002F9F90 /* Supporting Files */ = {
@@ -351,9 +332,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4FD6C4731B754AF1002F9F90 /* CodeysCarInsurance */ = {
+		4FD6C4731B754AF1002F9F90 /* Codey-Project */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "CodeysCarInsurance" */;
+			buildConfigurationList = 4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "Codey-Project" */;
 			buildPhases = (
 				4FD6C4701B754AF1002F9F90 /* Sources */,
 				4FD6C4711B754AF1002F9F90 /* Frameworks */,
@@ -363,15 +344,13 @@
 			buildRules = (
 			);
 			dependencies = (
-				B5DAD87821CAC47600A4B9BD /* PBXTargetDependency */,
-				B587814221CBF13200E8644B /* PBXTargetDependency */,
-				B587814621CBF13200E8644B /* PBXTargetDependency */,
-				B5C3646021CBF30E003941D0 /* PBXTargetDependency */,
-				B5C3646521CBF324003941D0 /* PBXTargetDependency */,
-				B5C3646921CBF331003941D0 /* PBXTargetDependency */,
+				B5B2CBF8227359A100A515D1 /* PBXTargetDependency */,
+				B5B2CBFA227359A100A515D1 /* PBXTargetDependency */,
+				B5B2CBFC227359A100A515D1 /* PBXTargetDependency */,
 			);
-			name = CodeysCarInsurance;
-			productReference = 4FD6C4741B754AF1002F9F90 /* CodeysCarInsurance.app */;
+			name = "Codey-Project";
+			productName = CodeysCarInsurance;
+			productReference = 4FD6C4741B754AF1002F9F90 /* Codey-Project.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -395,7 +374,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "CodeysCarInsurance" */;
+			buildConfigurationList = 4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "Codey-Project" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -423,7 +402,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				4FD6C4731B754AF1002F9F90 /* CodeysCarInsurance */,
+				4FD6C4731B754AF1002F9F90 /* Codey-Project */,
 			);
 		};
 /* End PBXProject section */
@@ -557,35 +536,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B587814221CBF13200E8644B /* PBXTargetDependency */ = {
+		B5B2CBF8227359A100A515D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SalesforceAnalytics;
-			targetProxy = B587814121CBF13200E8644B /* PBXContainerItemProxy */;
+			targetProxy = B5B2CBF7227359A100A515D1 /* PBXContainerItemProxy */;
 		};
-		B587814621CBF13200E8644B /* PBXTargetDependency */ = {
+		B5B2CBFA227359A100A515D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SalesforceSDKCommon;
-			targetProxy = B587814521CBF13200E8644B /* PBXContainerItemProxy */;
+			targetProxy = B5B2CBF9227359A100A515D1 /* PBXContainerItemProxy */;
 		};
-		B5C3646021CBF30E003941D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SalesforceAnalytics;
-			targetProxy = B5C3645F21CBF30E003941D0 /* PBXContainerItemProxy */;
-		};
-		B5C3646521CBF324003941D0 /* PBXTargetDependency */ = {
+		B5B2CBFC227359A100A515D1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SalesforceSDKCore;
-			targetProxy = B5C3646421CBF324003941D0 /* PBXContainerItemProxy */;
-		};
-		B5C3646921CBF331003941D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SalesforceSDKCommon;
-			targetProxy = B5C3646821CBF331003941D0 /* PBXContainerItemProxy */;
-		};
-		B5DAD87821CAC47600A4B9BD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SalesforceSDKCore;
-			targetProxy = B5DAD87721CAC47600A4B9BD /* PBXContainerItemProxy */;
+			targetProxy = B5B2CBFB227359A100A515D1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -703,12 +667,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CodeysCarInsurance/CodeysCarInsurance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Codey-Project.entitlements";
 				DEVELOPMENT_TEAM = 745ST2PM9F;
-				INFOPLIST_FILE = CodeysCarInsurance/Info.plist;
+				INFOPLIST_FILE = CodeysProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.force.codeyscarinsurance.CodeysCarInsurance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.force.codeyscarinsurance.CodeysProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -718,12 +682,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CodeysCarInsurance/CodeysCarInsurance.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Codey-Project.entitlements";
 				DEVELOPMENT_TEAM = 745ST2PM9F;
-				INFOPLIST_FILE = CodeysCarInsurance/Info.plist;
+				INFOPLIST_FILE = CodeysProject/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.force.codeyscarinsurance.CodeysCarInsurance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.force.codeyscarinsurance.CodeysProject;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -732,7 +696,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "CodeysCarInsurance" */ = {
+		4FD6C46F1B754AF1002F9F90 /* Build configuration list for PBXProject "Codey-Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FD6C4911B754AF1002F9F90 /* Debug */,
@@ -741,7 +705,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "CodeysCarInsurance" */ = {
+		4FD6C4931B754AF1002F9F90 /* Build configuration list for PBXNativeTarget "Codey-Project" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4FD6C4941B754AF1002F9F90 /* Debug */,

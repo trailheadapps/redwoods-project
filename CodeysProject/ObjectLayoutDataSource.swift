@@ -102,7 +102,7 @@ class ObjectLayoutDataSource: NSObject {
 	///   - request: The request that was built, which can be used to retrieve
 	///     the fields for the object.
 	private func buildRequestFromCompactLayout(forObjectType objectType: String, objectId: String, completionHandler: @escaping (_ request: RestRequest) -> Void) {
-		let layoutRequest = RestRequest(method: .GET, path: "/v44.0/compactLayouts?q=\(objectType)", queryParams: nil)
+		let layoutRequest = RestRequest(method: .GET, path: "v44.0/compactLayouts", queryParams: ["q": objectType])
 		layoutRequest.parseResponse = false
 		RestClient.shared.send(request: layoutRequest, onFailure: handleError) { response, _ in
 			guard let responseData = response as? Data else { return }
