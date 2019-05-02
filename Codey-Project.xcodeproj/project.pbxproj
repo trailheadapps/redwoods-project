@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		4F393A291C3C8BCD00B3EA13 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F393A281C3C8BCD00B3EA13 /* main.swift */; };
 		4FD6C47A1B754AF1002F9F90 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */; };
-		ABBB0C5E21C977A700CFD686 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBB0C5D21C977A700CFD686 /* Assets.xcassets */; };
 		ABBB0C6021C9D50800CFD686 /* ObjectListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBB0C5F21C9D50800CFD686 /* ObjectListDataSource.swift */; };
+		B596AACC227B33BE0054598B /* AppIcons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B596AACB227B33BE0054598B /* AppIcons.xcassets */; };
+		B596AACE227B359A0054598B /* Icon-76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B596AACD227B359A0054598B /* Icon-76@2x.png */; };
 		B5B254D221B1B02200CB628C /* NewClaimViewController+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B254B521B1B01B00CB628C /* NewClaimViewController+Contacts.swift */; };
 		B5B254D521B1B02200CB628C /* ObjectLayoutDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B254B821B1B01B00CB628C /* ObjectLayoutDataSource.swift */; };
 		B5B254D621B1B02200CB628C /* CompactLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B254B921B1B01B00CB628C /* CompactLayout.swift */; };
@@ -164,10 +165,11 @@
 		4FD6C4741B754AF1002F9F90 /* Codey-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Codey-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD6C4781B754AF1002F9F90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD6C4791B754AF1002F9F90 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABBB0C5D21C977A700CFD686 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABBB0C5F21C9D50800CFD686 /* ObjectListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectListDataSource.swift; sourceTree = "<group>"; };
 		B587810521CBEFD800E8644B /* SalesforceSDKCommon.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceSDKCommon.xcodeproj; path = "mobile_sdk/SalesforceMobileSDK-iOS/libs/SalesforceSDKCommon/SalesforceSDKCommon.xcodeproj"; sourceTree = "<group>"; };
 		B587811421CBEFE100E8644B /* SalesforceAnalytics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SalesforceAnalytics.xcodeproj; path = "mobile_sdk/SalesforceMobileSDK-iOS/libs/SalesforceAnalytics/SalesforceAnalytics.xcodeproj"; sourceTree = "<group>"; };
+		B596AACB227B33BE0054598B /* AppIcons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIcons.xcassets; sourceTree = "<group>"; };
+		B596AACD227B359A0054598B /* Icon-76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76@2x.png"; sourceTree = "<group>"; };
 		B5B254B521B1B01B00CB628C /* NewClaimViewController+Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewClaimViewController+Contacts.swift"; sourceTree = "<group>"; };
 		B5B254B821B1B01B00CB628C /* ObjectLayoutDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectLayoutDataSource.swift; sourceTree = "<group>"; };
 		B5B254B921B1B01B00CB628C /* CompactLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompactLayout.swift; sourceTree = "<group>"; };
@@ -237,8 +239,9 @@
 		4FD6C4771B754AF1002F9F90 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				ABBB0C5D21C977A700CFD686 /* Assets.xcassets */,
 				B7168FBB1FACC6F900A48DB5 /* LaunchScreen.storyboard */,
+				B596AACB227B33BE0054598B /* AppIcons.xcassets */,
+				B596AACD227B359A0054598B /* Icon-76@2x.png */,
 				4F393A281C3C8BCD00B3EA13 /* main.swift */,
 				B5B254C321B1B01D00CB628C /* UIView+loading.swift */,
 				B77BD8A221125B510036B284 /* bootconfig.plist */,
@@ -344,7 +347,7 @@
 				B5B2CBFC227359A100A515D1 /* PBXTargetDependency */,
 			);
 			name = "Codey-Project";
-			productName = Codey-Project;
+			productName = "Codey-Project";
 			productReference = 4FD6C4741B754AF1002F9F90 /* Codey-Project.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -494,9 +497,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABBB0C5E21C977A700CFD686 /* Assets.xcassets in Resources */,
 				B77BD8A321125B510036B284 /* bootconfig.plist in Resources */,
+				B596AACC227B33BE0054598B /* AppIcons.xcassets in Resources */,
 				B5B254E221B1B02200CB628C /* Main.storyboard in Resources */,
+				B596AACE227B359A0054598B /* Icon-76@2x.png in Resources */,
 				B7168FBC1FACC6F900A48DB5 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -661,6 +665,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Codey-Project.entitlements";
 				DEVELOPMENT_TEAM = 745ST2PM9F;
 				INFOPLIST_FILE = "$(SRCROOT)/Codey-Project/Info.plist";
@@ -676,6 +681,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = "Codey-Project.entitlements";
 				DEVELOPMENT_TEAM = 745ST2PM9F;
 				INFOPLIST_FILE = "$(SRCROOT)/Codey-Project/Info.plist";
