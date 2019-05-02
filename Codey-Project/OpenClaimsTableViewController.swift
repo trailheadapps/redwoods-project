@@ -1,6 +1,6 @@
 //
 //  OpenClaimsTableViewController.swift
-//  Codey's Car Insurance Project
+//  Codey's Project
 //
 //  Created by Kevin Poorman on 11/9/18.
 //  Copyright © 2018 Salesforce. All rights reserved.
