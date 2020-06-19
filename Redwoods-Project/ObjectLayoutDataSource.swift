@@ -44,7 +44,7 @@ class ObjectLayoutDataSource: NSObject {
 	let cellConfigurator: CellConfigurator
 
 	/// The list of field names to omit from the results.
-	let fieldBlacklist = ["attributes", "Id"]
+	let fieldblocklist = ["attributes", "Id"]
 
 	/// The fields for the object returned from the Salesforce server.
 	/// Each field is a tuple providing the `label` and `value` for the field.
@@ -149,12 +149,12 @@ class ObjectLayoutDataSource: NSObject {
 	}
 
 	/// Transforms the fields in the record into `ObjectField` values, omitting
-	/// any fields that are in the blacklist or that are not strings.
+	/// any fields that are in the blocklist or that are not strings.
 	///
 	/// - Parameter record: The record to be transformed.
 	/// - Returns: The list of object fields extracted from the record.
 	private func fields(from record: [String: Any]) -> [ObjectField] {
-		let filteredRecord = record.lazy.filter { key, value in !self.fieldBlacklist.contains(key) && value is String }
+		let filteredRecord = record.lazy.filter { key, value in !self.fieldblocklist.contains(key) && value is String }
 		return filteredRecord.map { key, value in (label: key, value: value as! String) }
 	}
 
