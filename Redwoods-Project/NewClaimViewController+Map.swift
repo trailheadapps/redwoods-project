@@ -34,9 +34,15 @@ extension NewClaimViewController {
         // to cancel any existing ones if we are getting location updates.
 		geoCoder.cancelGeocode()
 		geoCoder.reverseGeocodeLocation(location) { placemarks, _ in
-			//This next line is useless, but included so the app will compile out of the box. You must refactor this line.
-			let address = ""
-			//these two lines are provided for you
+			guard let placemark = placemarks?.first else { return }
+			self.geoCodedAddress = placemark
+			let number = placemark.subThoroughfare ?? ""
+			let street = placemark.thoroughfare ?? ""
+			let city = placemark.locality ?? ""
+			let state = placemark.administrativeArea ?? ""
+			let zip = placemark.postalCode ?? ""
+			let country = placemark.isoCountryCode ?? ""
+			let address = number + " " + street + " " + city + " " + state + ". " + zip + " " + country
 			self.addressLabel.text = address
 			self.geoCodedAddressText = address
 		}
