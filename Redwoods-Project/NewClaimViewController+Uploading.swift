@@ -41,8 +41,10 @@ extension NewClaimViewController {
 			errorDescription = "An unknown error occurred."
 		}
 		
-		if(alert.isViewLoaded){
-			alert.dismiss(animated: true)
+		DispatchQueue.main.async {
+			if(self.alert.isViewLoaded){
+				self.alert.dismiss(animated: true)
+			}
 		}
 		alert = UIAlertController(title: "We're sorry, an error has occured. This claim has not been saved.", message: errorDescription, preferredStyle: .alert)
 		alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: { action in self.unwindToClaims(forCaseID: nil)}))
@@ -119,9 +121,8 @@ extension NewClaimViewController {
 	///   - caseID: The ID of the case that is being modified.
 	private func createCaseContacts(withContactIDs contactIDs: [String], forCaseID caseID: String) {
 		let associationRequest = RestClient.shared.compositeRequestForCreatingAssociations(fromContactIDs: contactIDs, toCaseID: caseID)
-		RestClient.shared.sendCompositeRequest(associationRequest, onFailure: handleError) { _ in
-			SalesforceLogger.d(type(of: self), message: "Completed creating \(contactIDs.count) case contact record(s). Optionally uploading map image as attachment.")
-			self.unwindToClaims(forCaseID: caseID)
+		RestClient.shared.sendCompositeRequest(associationRequest, onFailure: handleError) { _ in SalesforceLogger.d(type(of: self), message: "Completed creating \(contactIDs.count) case contact record(s). Optionally uploading map image as attachment.")
+			self.uploadMapImage(forCaseID: caseID)
 		}
 	}
 
@@ -158,8 +159,12 @@ extension NewClaimViewController {
 
 			let mapImage = UIGraphicsGetImageFromCurrentImageContext()!
 			
-			//Insert your attachmentRequest here.
+			let attachmentRequest = RestClient.shared.requestForCreatingImageAttachment(from: mapImage,relatingToCaseID: caseID, fileName: "MapSnapshot.png")
 			
+			//Insert your attachmentRequest here.
+			RestClient.shared.send(request: attachmentRequest, onFailure: self.handleError) { _, _ in SalesforceLogger.d(type(of: self), message: "Completed uploading map image. Now uploading photos.")
+				self.uploadPhotos (forCaseID: caseID)
+			}
 			//End area for Attachment Request.
 			UIGraphicsEndImageContext()
 		
@@ -178,6 +183,7 @@ extension NewClaimViewController {
 				SalesforceLogger.d(type(of: self), message: "Completed upload of photo \(index + 1) of \(self.selectedImages.count).")
 			}
 		}
+		self.uploadAudio(forCaseID: caseID)
 	}
 
 	/// Uploads the recorded audio as an attachment.
@@ -189,6 +195,7 @@ extension NewClaimViewController {
 			let attachmentRequest = RestClient.shared.requestForCreatingAudioAttachment(from: audioData, relatingToCaseID: caseID)
 			RestClient.shared.send(request: attachmentRequest, onFailure: handleError) { _, _ in
 				SalesforceLogger.d(type(of: self), message: "Completed uploading audio file. Transaction complete!")
+				self.unwindToClaims(forCaseID: caseID)
 			}
 		} else {
 			// Complete upload if there is no audio file.
